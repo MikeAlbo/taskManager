@@ -1,0 +1,39 @@
+<!-- remove head and body tags in production, only neign used to test layout before angular build -->
+
+<head>
+    <link type="text/css" rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../../../bower_components/font-awesome/css/font-awesome.min.css">
+    <script src="../../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- left side controls, md + -->
+       <div class="list-group col-md-2 hidden-sm hidden-xs">
+  <button type="button" class="list-group-item" role="button" data-toggle="collapse" href="#adminUserPanel" aria-expanded="false" aria-controls="collapseExample">Users</button>
+  <button type="button" class="list-group-item" role="button" data-toggle="collapse" href="#adminPrivilegesPanel" aria-expanded="false" aria-controls="collapseExample">Privileges</button>
+  <button type="button" class="list-group-item" role="button" data-toggle="collapse" href="#adminReportsPanel" aria-expanded="false" aria-controls="collapseExample">Reports</button>
+  <button type="button" class="list-group-item" role="button" data-toggle="collapse" href="#adminAccountPanel" aria-expanded="false" aria-controls="collapseExample">Account</button>
+</div>
+        
+        <!-- view panels -->
+        
+        <!-- Admin Users Panel -->
+        <div class="collapse" id="adminUserPanel" class="col-md-8">
+  <div class="well text-center">
+    <h1> Users</h1>
+  </div>
+</div>
+        
+        <!-- Admin Privileges Panel -->
+        
+        <div class="collapse" id="adminPrivilegesPanel" class="col-md-8">
+  <div class="well text-center">
+    <h1> Privileges </h1>
+  </div>
+</div>
+        
+    </div>
+
+</body>
