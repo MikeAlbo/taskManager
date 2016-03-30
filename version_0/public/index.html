@@ -34,6 +34,10 @@
         <script src="../bower_components/angular-route/angular-route.min.js"></script>
         <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
         
+        <!-- firebase / Angular fire -->
+        <script src="../bower_components/firebase/firebase.js"></script>
+        <script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+        
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
         
@@ -44,8 +48,8 @@
         <script src="../app/controllers/profile.js"></script>
     </head>
     <body>
-        <header></header>
+        <header ng-include= "'views/sitewide/header.html'"></header>
         <div class="container" ng-view><h1>{{message}}</h1></div>
-        <footer></footer>
+        <footer ng-include="'views/sitewide/footer.html'"></footer>
     </body>
 </html>

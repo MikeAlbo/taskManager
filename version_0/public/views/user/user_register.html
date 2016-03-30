@@ -11,8 +11,8 @@
     <div class="jumbotron col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12 text-center">
         <h2> Register </h2>
         
-        <form  name="registerForm" class="col-sm-8 col-sm-offset-2" novalidate>
-           <p> test message: {{registerForm.firstName.$invalid}}</p> 
+        <form  name="registerForm" class="col-sm-8 col-sm-offset-2" ng-submit="register()"  novalidate>
+           <p ng-show="message">{{message}} </p>
             <div class="form-group">
                 <label for="userSelector"> Select your name.</label>
                 <select name="userSelect" class="form-control" id="userSelector">
@@ -50,7 +50,7 @@
                 <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="registerForm.password.$valid && registerForm.password.$touched"></span>
             </div>
             
-            <button type="submit" ng-disabled="registerForm.$invalid" onclick="alert('submited!')" class="btn btn-info">Submit</button>
+            <button type="submit" ng-disabled="registerForm.$invalid"  class="btn btn-info">Submit</button>
             
         </form>
         
