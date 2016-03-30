@@ -12,7 +12,7 @@
         <h2> Register </h2>
         
         <form  name="registerForm" class="col-sm-8 col-sm-offset-2" novalidate>
-           <p> test message: {{message}}</p> 
+           <p> test message: {{registerForm.firstName.$invalid}}</p> 
             <div class="form-group">
                 <label for="userSelector"> Select your name.</label>
                 <select name="userSelect" class="form-control" id="userSelector">
@@ -22,22 +22,35 @@
                 </select>
             </div>
             
-            <div class="form-group">
+            <div class="form-group has-feedback" ng-class="{'has-error': registerForm.firstName.$invalid && registerForm.firstName.$touched, 'has-success' : registerForm.firstName.$valid && registerForm.firstName.$touched}">
                 <label for="firstName">First Name</label>
-                <input name="firstName" type="text" id="firstName" class="form-control text-center" placeholder="First Name">
+                <input name="firstName" type="text" id="firstName" class="form-control text-center" placeholder="First Name" ng-model="user.firstName" ng-required="true">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="registerForm.firstName.$invalid && registerForm.firstName.$touched"></span>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="registerForm.firstName.$valid && registerForm.firstName.$touched"></span>
             </div>
             
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input name="lastName" type="text" id="lastName" class="form-control text-center" placeholder="Last Name">
+            <div class="form-group has-feedback" ng-class="{'has-error': registerForm.lastName.$invalid && registerForm.lastName.$touched, 'has-success' : registerForm.lastName.$valid && registerForm.lastName.$touched}">
+                <label for="lastName"> Last Name</label>
+                <input name="lastName" type="text" id="lastName" class="form-control text-center" placeholder="Last Name"  ng-model="user.lastName" ng-required="true">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="registerForm.lastName.$invalid && registerForm.lastName.$touched"></span>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="registerForm.lastName.$valid && registerForm.lastName.$touched"></span>
             </div>
             
-            <div class="form-group">
-                <label for="email">Work Email</label>
-                <input name="workEmail" type="email" id="email" class="form-control text-center" placeholder="example@example.com">
+            <div class="form-group has-feedback" ng-class="{'has-error': registerForm.workEmail.$invalid && registerForm.workEmail.$touched, 'has-success' : registerForm.workEmail.$valid && registerForm.workEmail.$touched}">
+                <label for="email"> Work Email</label>
+                <input name="workEmail" type="email" id="email" class="form-control text-center" placeholder="example@example.com" ng-model="user.email" ng-required="true">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="registerForm.workEmail.$invalid && registerForm.workEmail.$touched"></span>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="registerForm.workEmail.$valid && registerForm.workEmail.$touched"></span>
             </div>
             
-            <button type="submit" class="btn btn-info">Submit</button>
+            <div class="form-group has-feedback" ng-class="{'has-error': registerForm.password.$invalid && registerForm.password.$touched, 'has-success' : registerForm.password.$valid && registerForm.password.$touched}">
+                <label for="password"> Password</label>
+                <input name="password" type="password" id="userPassword" class="form-control text-center" placeholder="password" ng-model="user.password" ng-required="true">
+                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="registerForm.password.$invalid && registerForm.password.$touched"></span>
+                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true" ng-show="registerForm.password.$valid && registerForm.password.$touched"></span>
+            </div>
+            
+            <button type="submit" ng-disabled="registerForm.$invalid" onclick="alert('submited!')" class="btn btn-info">Submit</button>
             
         </form>
         
